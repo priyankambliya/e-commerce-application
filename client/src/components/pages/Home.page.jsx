@@ -1,7 +1,9 @@
 import { Route, Routes, useLocation } from "react-router-dom"
+
 import Header from "../header/Header"
 import SideBar from "../SideBar"
 import DefaultPage from "../header/DefaultPage.page"
+import UserDetails from "./Userdetail.page"
 
 function Home() {
 
@@ -17,6 +19,7 @@ function Home() {
                 <div className="col-start-2 col-span-5 m-3 overflow-hidden">
                     <Routes>
                         <Route path="/" element={<DefaultPage />} />
+                        <Route path="/user-detail/:id" element={<UserDetails />} />
                     </Routes>
                 </div>
             </div>
