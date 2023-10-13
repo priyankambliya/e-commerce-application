@@ -10,6 +10,8 @@ import Signin from './components/pages/Signin.page'
 import Home from './components/pages/Home.page'
 import DefaultPage from './components/header/DefaultPage.page'
 import UserDetails from './components/pages/Userdetail.page'
+import MainAdminPage from './components/pages/admin/MainAdminPage.page'
+import AdminsigninPage from './components/pages/admin/AdminsigninPage.page'
 
 const queryClient = new QueryClient()
 
@@ -22,6 +24,9 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Signup />} />
+            <Route path="/admin" element={<MainAdminPage />}>
+              <Route path="/admin/signin" element={<AdminsigninPage />} />
+            </Route>
             <Route path="/signin" element={<Signin />} />
             <Route path="/home" element={<Home />}>
               <Route path="/home/" element={<DefaultPage />} />
