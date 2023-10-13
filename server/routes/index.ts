@@ -7,7 +7,8 @@ import {
 import {
     getuser,
     signupUser,
-    signinUser
+    signinUser,
+    userDetails
 } from '../controllers/commonController'   // ==================> COMMON CONTROLLER 
 
 import {
@@ -24,5 +25,6 @@ const router = express.Router()
 router.get(COMMON_ROUTES.DEFAULT_ROUTE,getuser)
 router.post(COMMON_ROUTES.USER_SIGNUP,signupUserValidator,customSignupUserValidator,signupUser)
 router.post(COMMON_ROUTES.USER_SIGNIN,signinUserValidator,signinUser)
+router.get(COMMON_ROUTES.USER_DETAILS,userDetails)
 
 export default router

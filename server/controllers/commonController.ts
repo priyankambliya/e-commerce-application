@@ -57,8 +57,23 @@ const signinUser = async (req: Request, res: Response) => {
     }
 }
 
+const userDetails = async (req: Request, res: Response) => {
+    try {
+        const id = req.params.id
+    
+        const user = await User.findById(id)
+    
+        successHandler(res,user,200)
+    } catch (error:any) {
+        console.log(error.messge)
+        errorHandler(res,error,401)
+    }
+}
+
+
 export {
     getuser,
     signupUser,
-    signinUser
+    signinUser,
+    userDetails
 }
