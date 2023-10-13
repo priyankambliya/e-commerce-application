@@ -6,11 +6,13 @@ import {
 
 import {
     getuser,
-    signupUser
+    signupUser,
+    signinUser
 } from '../controllers/commonController'   // ==================> COMMON CONTROLLER 
 
 import {
-    signupUserValidator
+    signupUserValidator,
+    signinUserValidator
 } from '../validations/validatorsRules'    // ==================> VALIDATORS
 
 import {
@@ -19,7 +21,8 @@ import {
 
 const router = express.Router()
 
-router.get(COMMON_ROUTES.DEFAULT_ROUTE, getuser)
-router.post(COMMON_ROUTES.USER_SIGNUP, signupUserValidator, customSignupUserValidator, signupUser)
+router.get(COMMON_ROUTES.DEFAULT_ROUTE,getuser)
+router.post(COMMON_ROUTES.USER_SIGNUP,signupUserValidator,customSignupUserValidator,signupUser)
+router.post(COMMON_ROUTES.USER_SIGNIN,signinUserValidator,signinUser)
 
 export default router
